@@ -1,8 +1,12 @@
 # base-clone
 
 A clean-room reimplementation of **assistant-ui's `base` demo**
-(`apps/docs/components/examples/base.tsx`) using **only shadcn/ui** — no
-assistant-ui dependency, no Base UI, no Lexical.
+([`apps/docs/components/examples/base.tsx`](https://github.com/assistant-ui/assistant-ui))
+using **only shadcn/ui** — no assistant-ui dependency, no Base UI, no Lexical.
+
+Not affiliated with or endorsed by assistant-ui. This is an independent
+reimplementation written against the rendered output of their demo; see
+[License](#license).
 
 It exists to answer one question: *can we get that exact look and feel from
 shadcn/ui alone?* The answer, measured rather than asserted, is **yes** — see
@@ -124,3 +128,12 @@ files without that prefix predate the fidelity fixes and are kept for comparison
 `desktop-dark.png` was captured with Chrome's `--force-dark-mode`, which does its
 own auto-inversion — our dark mode is class-based, so that file shows Chrome's
 guess, not our theme. `fix-desktop-dark.png` is the real one.
+
+## License
+
+[MIT](LICENSE). The reference project,
+[assistant-ui](https://github.com/assistant-ui/assistant-ui), is also MIT.
+No assistant-ui code is vendored here — `src/components/chat/` was written
+against the rendered output of their demo, and `src/components/ui/` is stock
+shadcn/ui. Their wordmark, favicon, and the model vendors' logos are
+deliberately not reproduced (see deviation 6 above).

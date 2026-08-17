@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# headless-Chrome verification captures — regenerate, do not review as source
+verify/

@@ -60,7 +60,16 @@ function SheetContent({
       <SheetPrimitive.Content
         data-slot="sheet-content"
         className={cn(
-          "fixed z-50 flex flex-col gap-4 bg-background shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:animate-in data-[state=open]:duration-500",
+          // `bg-popover text-popover-foreground` rather than shadcn's stock
+          // `bg-background`. The reference's sheet is the Base UI variant
+          // (`apps/docs/tsconfig.json` resolves `@/components/ui/*` to `base/*`
+          // first), which paints the popover surface. In light mode the two tokens
+          // are both `oklch(1 0 0)` and identical; in DARK, `--popover`
+          // (`oklch(0.205 0 0)`) sits distinctly lighter than `--background`
+          // (`oklch(0.145 0 0)`), so the reference's mobile panel reads as a
+          // raised surface while a `bg-background` one dissolves into the card
+          // behind it. Verified against both token blocks 2026-08-17.
+          "fixed z-50 flex flex-col gap-4 bg-popover text-popover-foreground shadow-lg transition ease-in-out data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:animate-in data-[state=open]:duration-500",
           side === "right" &&
             "inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm",
           side === "left" &&

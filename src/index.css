@@ -2,10 +2,19 @@
 @import "tw-animate-css";
 
 /*
-  The stock shadcn/ui theme — the `zinc` base colour, verbatim from the shadcn
-  registry (the same tokens assistant-ui's docs app uses, read off
-  `apps/registry/app/globals.css` in the assistant-ui checkout, 2026-08-17).
-  Keeping the values identical is what makes the visual comparison meaningful:
+  The stock shadcn/ui theme — the `neutral` base colour.
+
+  🚨 CORRECTED 2026-08-17. This file first carried zinc, copied from
+  `apps/registry/app/globals.css`, with a comment claiming those were "the same
+  tokens assistant-ui's docs app uses". That was wrong. `base.tsx` lives in
+  **apps/docs**, and `apps/docs/app/layout.tsx` imports `@/styles/globals.css`,
+  which is NEUTRAL — chroma 0 throughout. Zinc carries ~0.005-0.016 chroma at
+  hue 286, so every grey had a faint cool cast, worst on `--muted-foreground`
+  (zinc-500 `#71717a` vs neutral-500 `#737373`) which drives all secondary text,
+  the sidebar date labels and most icons.
+  Values below are verbatim from `apps/docs/styles/globals.css`.
+
+  Keeping the palette identical is what makes the visual comparison meaningful:
   every difference you then see is OUR markup, not a palette drift.
 */
 
@@ -47,60 +56,60 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
+  --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
+  --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
+  --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
-  --sidebar: oklch(0.21 0.006 285.885);
+  --ring: oklch(0.556 0 0);
+  --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
@@ -127,5 +136,143 @@
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/*
+  Syntax colours for fenced code blocks.
+
+  Measured 2026-08-17: without this, `rehype-highlight` was emitting 19 correct
+  token spans per block (`hljs-keyword`, `hljs-title function_`, `hljs-params`,
+  `hljs-number`, …) and EVERY ONE of them computed to plain `--foreground` —
+  `getComputedStyle` returned a single distinct colour across all 19. Highlighting
+  was running and producing nothing, which is the worst kind of dead code because
+  it looks wired. It was the most visible difference from the reference, since a
+  code block is the largest flat region in the demo thread.
+
+  The reference highlights with Shiki using `github-light-default` /
+  `github-dark-default` (`packages/ui/src/components/assistant-ui/shiki-highlighter.tsx`).
+  These are those two themes' palettes mapped onto highlight.js's class set. It is
+  an APPROXIMATION, not a port: Shiki colours fine-grained TextMate scopes, while
+  highlight.js emits ~20 coarse buckets, so some scopes collapse together. The
+  common tokens (keyword / string / comment / number / function / type) land on
+  the right colours, which is what the eye actually reads.
+
+  Deliberately NOT importing a `highlight.js/styles/*.css` theme: those set
+  `.hljs` background and padding too, which would fight `aui-md-pre`'s own
+  `bg-muted/30 p-3.5 rounded-b-xl` frame. Colour only, scoped to our block.
+
+  Note the two-class selectors: highlight.js emits `class="hljs-title function_"`,
+  i.e. `hljs-title` PLUS a bare `function_`, so those need `.hljs-title.function_`
+  rather than a single class.
+*/
+@layer components {
+  .aui-md-pre {
+    .hljs-comment,
+    .hljs-quote {
+      color: #6e7781;
+      font-style: italic;
+    }
+    .hljs-keyword,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-doctag,
+    .hljs-selector-tag {
+      color: #cf222e;
+    }
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-char,
+    .hljs-addition,
+    .hljs-template-tag {
+      color: #0a3069;
+    }
+    .hljs-number,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-meta {
+      color: #0550ae;
+    }
+    .hljs-title,
+    .hljs-title.function_,
+    .hljs-section,
+    .hljs-name {
+      color: #8250df;
+    }
+    .hljs-title.class_,
+    .hljs-built_in,
+    .hljs-tag,
+    .hljs-selector-class {
+      color: #116329;
+    }
+    .hljs-params,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-property,
+    .hljs-selector-attr {
+      color: #953800;
+    }
+    .hljs-deletion {
+      color: #82071e;
+    }
+    .hljs-emphasis {
+      font-style: italic;
+    }
+    .hljs-strong {
+      font-weight: 600;
+    }
+  }
+
+  .dark .aui-md-pre {
+    .hljs-comment,
+    .hljs-quote {
+      color: #8b949e;
+    }
+    .hljs-keyword,
+    .hljs-literal,
+    .hljs-type,
+    .hljs-doctag,
+    .hljs-selector-tag {
+      color: #ff7b72;
+    }
+    .hljs-string,
+    .hljs-regexp,
+    .hljs-char,
+    .hljs-addition,
+    .hljs-template-tag {
+      color: #a5d6ff;
+    }
+    .hljs-number,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-meta {
+      color: #79c0ff;
+    }
+    .hljs-title,
+    .hljs-title.function_,
+    .hljs-section,
+    .hljs-name {
+      color: #d2a8ff;
+    }
+    .hljs-title.class_,
+    .hljs-built_in,
+    .hljs-tag,
+    .hljs-selector-class {
+      color: #7ee787;
+    }
+    .hljs-params,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-property,
+    .hljs-selector-attr {
+      color: #ffa657;
+    }
+    .hljs-deletion {
+      color: #ffa198;
+    }
   }
 }

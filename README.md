@@ -15,6 +15,18 @@ component is built on the shadcn primitives a project like this already has
 installed. How closely it actually matches is measured rather than asserted —
 see [Fidelity](#fidelity) for what lands and what doesn't.
 
+## Screenshots
+
+| Light | Dark |
+| --- | --- |
+| ![Thread view, light theme](docs/thread-light.png) | ![Thread view, dark theme](docs/thread-dark.png) |
+
+One thread in both themes — a user turn, a collapsed reasoning panel, a tool
+call, markdown with inline KaTeX, a table, a highlighted code block, and the
+message action row. Captured from the production build in headless Chrome at
+2×, at a viewport tall enough to hold the whole conversation. Dark is included
+because the app ships no toggle for it (see [Known gaps](#known-gaps)).
+
 ## Run it
 
 ```bash

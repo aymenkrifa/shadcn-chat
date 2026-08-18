@@ -1,7 +1,7 @@
 # shadcn-chat
 
 A clean-room reimplementation of **assistant-ui's `base` demo**
-([`apps/docs/components/examples/base.tsx`](https://github.com/assistant-ui/assistant-ui))
+([`apps/docs/components/examples/base.tsx`](https://github.com/assistant-ui/assistant-ui/blob/main/apps/docs/components/examples/base.tsx))
 using **only shadcn/ui** — no assistant-ui dependency, no Base UI, no Lexical.
 
 Not affiliated with or endorsed by assistant-ui. This is an independent

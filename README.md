@@ -1,4 +1,4 @@
-# base-clone
+# shadcn-chat
 
 A clean-room reimplementation of **assistant-ui's `base` demo**
 ([`apps/docs/components/examples/base.tsx`](https://github.com/assistant-ui/assistant-ui))
@@ -8,9 +8,12 @@ Not affiliated with or endorsed by assistant-ui. This is an independent
 reimplementation written against the rendered output of their demo; see
 [License](#license).
 
-It exists to answer one question: *can we get that exact look and feel from
-shadcn/ui alone?* The answer, measured rather than asserted, is **yes** — see
-[Fidelity](#fidelity) for what matches and what doesn't.
+It exists because adopting assistant-ui means taking on a dependency — its
+runtime, plus Base UI and Lexical — for a look that shadcn/ui can already
+produce. The point here is to keep the look and drop the dependency: every
+component is built on the shadcn primitives a project like this already has
+installed. How closely it actually matches is measured rather than asserted —
+see [Fidelity](#fidelity) for what lands and what doesn't.
 
 ## Run it
 
